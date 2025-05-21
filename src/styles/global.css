@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme {
+    --color-kumo-purple: #948392;
+    --color-kumo-pink: #F2ADBD;
+    --color-kumo-yellow: #C4945D;
+}
