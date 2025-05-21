@@ -10,14 +10,19 @@ import '../styles/global.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>Kumogorogoro Fan Site</title>
 	</head>
-	<body>
+	<body class="bg-black text-white">
     <div class="header w-full py-10 bg-kumo-purple"></div>
     <div>
-      <nav class="sidebar">
-
+      <nav class="sidebar font-kalam">
+        <a class="" href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/support">Support</a>
       </nav>
       <main>
-
+        <h1>Home Page</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio dolores est ut nostrum sed fugiat sint? In labore consequatur, eaque voluptatum ipsa iusto beatae dolor molestiae! Aliquid recusandae reprehenderit at.
+        </p>
       </main>
     </div>
 		<slot />
