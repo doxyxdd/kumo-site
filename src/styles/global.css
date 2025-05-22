@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
 
 @theme {
     --color-kumo-purple: #948392;
