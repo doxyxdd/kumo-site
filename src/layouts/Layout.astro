@@ -1,19 +1,20 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Kumogorogoro Fan Site</title>
-	</head>
-	<body class="bg-black text-white">
-    <div class="header w-full py-10 bg-kumo-purple"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Kumogorogoro Fan Site</title>
+  </head>
+  <body class="bg-black text-white">
+    <div class="header bg-kumo-purple w-full py-10"></div>
     <div>
-      <nav class="sidebar font-kalam text-xl">
+      <nav class="sidebar font-kalam m-0 w-40 p-0 text-xl">
         <a class="" href="/">Home</a>
         <a href="/about">About</a>
         <a href="/support">Support</a>
@@ -22,14 +23,14 @@ import '../styles/global.css';
         <slot />
       </main>
     </div>
-	</body>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

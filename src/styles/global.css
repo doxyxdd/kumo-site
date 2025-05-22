@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
 @theme {
-    --color-kumo-purple: #948392;
-    --color-kumo-pink: #F2ADBD;
-    --color-kumo-yellow: #C4945D;
+  --color-kumo-purple: #948392;
+  --color-kumo-pink: #f2adbd;
+  --color-kumo-yellow: #c4945d;
 
-    --font-kalam: 'Kalam', 'sans-serif';
+  --font-kalam: "Kalam", "sans-serif";
 }
