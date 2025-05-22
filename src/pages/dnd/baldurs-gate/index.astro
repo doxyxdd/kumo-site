@@ -1,0 +1,16 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import { getCollection } from 'astro:content';
+
+const sessions = await getCollection('baldursGate')
+
+---
+
+<Layout>
+	<h1 class="text-2xl underline">Sessions</h1>
+  <ul>
+    {sessions.map(session => (
+      <li><a href={`/dnd/baldurs-gate/sessions/${session.id}`}>{session.data.title}</a></li>
+    ))}
+  </ul>
+</Layout>
