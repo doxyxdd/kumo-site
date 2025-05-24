@@ -2,9 +2,10 @@
 title: "Escape the Nautiloid"
 author: "doxy"
 description: "We need to find our way off of this ship. Rescue any companions you can find."
-date: "2025-01-05"
+date: 2025-01-05
 act: "Prologue"
 locations: ["Nautiloid"]
+next: session-02
 ---
 
 # Objectives:

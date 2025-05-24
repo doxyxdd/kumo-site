@@ -2,9 +2,11 @@
 title: "Find a cure"
 author: "doxy"
 description: "We need to find a cure to this Illithid tadpole."
-date: "2025-01-13"
+date: 2025-01-13
 act: "Act 1"
 locations: ["Ravaged Beach", "Emerald Grove"]
+prev: session-01
+next: session-03
 ---
 
 # Objectives:

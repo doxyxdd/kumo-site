@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content"
+import { getEntry } from "astro:content"
+import MarkdownLayout from "./MarkdownLayout.astro"
+import { baldursGateUrl } from "~/util"
+interface Props {
+  post: CollectionEntry<'baldursGate'>
+}
+
+const { post } = Astro.props
+let prevPost, nextPost;
+if (post.data.prev) {
+  prevPost = await getEntry(post.data.prev)
+}
+if (post.data.next) {
+  nextPost = await getEntry(post.data.next)
+}
+---
+
+<MarkdownLayout>
+  {prevPost && 
+    (<a href={baldursGateUrl(prevPost.id)}>Previous Session</a>)
+  }
+    {nextPost && 
+      (<a href={baldursGateUrl(nextPost.id)}>Next Session</a>)
+    }
+  <slot></slot>
+</MarkdownLayout>
