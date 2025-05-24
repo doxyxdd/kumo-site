@@ -11,7 +11,7 @@ const sessions = await getCollection("baldursGate");
     {
       sessions.map((session) => (
         <li>
-          <a href={`/dnd/baldurs-gate/sessions/${session.id}`}>
+          <a href={`/kumo-site/dnd/baldurs-gate/sessions/${session.id}`}>
             {session.data.title}
           </a>
         </li>
