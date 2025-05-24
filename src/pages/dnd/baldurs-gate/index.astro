@@ -10,8 +10,8 @@ const sessions = await getCollection("baldursGate");
   <ol class="p-4">
     {
       sessions.map((session) => (
-        <li class="list-decimal">
-          <a href={`/kumo-site/dnd/baldurs-gate/sessions/${session.id}`}>
+        <li class="list-decimal p-0.5">
+          <a class="underline decoration-kumo-purple decoration-solid" href={`/kumo-site/dnd/baldurs-gate/sessions/${session.id}`}>
             {session.data.title}  <span class="text-sm text-gray-500">{session.data.date.toDateString()}</span>
           </a>
         </li>
