@@ -1,11 +1,11 @@
 ---
-import Layout from "~/layouts/Layout.astro";
+import SidebarLayout from "~/layouts/SidebarLayout.astro";
 import { getCollection } from "astro:content";
 
 const sessions = await getCollection("baldursGate");
 ---
 
-<Layout>
+<SidebarLayout>
   <h1 class="text-2xl underline">Sessions</h1>
   <ul>
     {
@@ -18,4 +18,4 @@ const sessions = await getCollection("baldursGate");
       ))
     }
   </ul>
-</Layout>
+</SidebarLayout>
