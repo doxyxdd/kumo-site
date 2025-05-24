@@ -2,7 +2,7 @@
 title: "Lorem"
 author: "doxy"
 description: "Eiusmod consequat eiusmod est ad est."
-date: 2025-01-13
+date: 2025-02-01
 act: "Act 1"
 locations: ["Ravaged Beach", "Emerald Grove"]
 prev: session-02

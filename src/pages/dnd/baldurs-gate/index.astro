@@ -7,15 +7,17 @@ const sessions = await getCollection("baldursGate");
 
 <SidebarLayout>
   <h1 class="text-2xl underline">Sessions</h1>
-  <ul>
+  <ol class="p-4">
     {
       sessions.map((session) => (
-        <li>
+        <li class="list-decimal">
           <a href={`/kumo-site/dnd/baldurs-gate/sessions/${session.id}`}>
-            {session.data.title}
+            {session.data.title}  <span class="text-sm text-gray-500">{session.data.date.toDateString()}</span>
           </a>
         </li>
       ))
     }
-  </ul>
+  </ol>
+
+  <p class="p-4 text-sm">NOTE: I am using baldur's gate as a placeholder for a D&D campaign. I am not very knowledgable about D&D so it is easier for me to placeholder stuff with something I am more familiar with.</p>
 </SidebarLayout>
