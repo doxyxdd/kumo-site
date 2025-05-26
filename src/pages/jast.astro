@@ -1,0 +1,30 @@
+---
+import Icon from "~/components/Icon.astro"
+import SidebarLayout from "~/layouts/SidebarLayout.astro"
+import { jast } from '~/util'
+
+---
+
+<SidebarLayout>
+  <h1 class="p-4 text-3xl font-kalam font-bold">Jast Idols</h1>
+  <div class="grid grid-cols-3 gap-8 p-4">
+    {jast.map(idol => (
+      <div class="bg-dark-gray p-4 rounded">
+        <img class="rounded" height="250" width="200" src={idol.img}>
+        <div class="p-2 text-center">{idol.name}</div>
+        <div class="flex justify-center items-center bg-pink-100 p-2 rounded-3xl">
+          {idol.socials.map(social => 
+            <div class="px-1">
+              <Icon name={social.name} 
+                link={social.link} 
+                height="25"
+                width="25"
+              />
+            </div>
+          )}
+        </div>
+    </div>
+    ))}
+    
+  </div>
+</SidebarLayout>

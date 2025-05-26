@@ -1,6 +1,6 @@
 ---
 title: "Find a cure"
-author: "doxy"
+author: "lily hopkins"
 description: "We need to find a cure to this Illithid tadpole."
 date: 2025-01-13
 act: "Act 1"

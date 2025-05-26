@@ -18,11 +18,18 @@ if (post.data.next) {
 ---
 
 <MarkdownLayout>
-  {prevPost && 
-    (<a href={baldursGateUrl(prevPost.id)}>Previous Session</a>)
-  }
-    {nextPost && 
-      (<a href={baldursGateUrl(nextPost.id)}>Next Session</a>)
-    }
+  <div class="w-full flex justify-between items-center">
+    {prevPost && (
+      <a href={baldursGateUrl(prevPost.id)}>
+        <div class="p-2 rounded bg-dark-gray text-sm hover:bg-dark-gray/75">← <span class="underline">Previous Session</span></div>
+      </a>
+    )}
+    <div class="text-sm">Author: {post.data.author} | Date: {post.data.date.toDateString()}</div>
+    {nextPost && (
+      <a href={baldursGateUrl(nextPost.id)}>
+        <div class="p-2 rounded bg-dark-gray text-sm hover:bg-dark-gray/75"><span class="underline">Next Session</span> →</div>
+      </a>
+    )}
+  </div>
   <slot></slot>
 </MarkdownLayout>

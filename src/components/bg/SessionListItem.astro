@@ -1,0 +1,23 @@
+---
+import type { BaldursGateSession } from '~/bg'
+import { baldursGateUrl } from '~/util'
+
+interface Props {
+  session: BaldursGateSession
+}
+
+const { session } = Astro.props
+const entry = session.data
+---
+
+<div class="relative even:bg-dark-gray rounded p-2">
+  <div>
+    <a class="font-bold text-xl" href={baldursGateUrl(session.id)}>
+      <h2 class="underline">{entry.title}</h2>
+    </a>
+    <span class="text-xs italic"> by {entry.author}</span>
+  </div>
+
+  <div class="font-mono p-2">{entry.description}</div>
+  <div class="absolute text-sm top-1 right-1">{entry.date.toDateString()}</div>
+</div>

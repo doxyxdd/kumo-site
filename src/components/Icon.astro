@@ -1,0 +1,22 @@
+---
+import type { IconType } from '~/util'
+import { getIcon } from '~/util'
+interface Props {
+  name: IconType,
+  link: string,
+  height: string,
+  width: string
+}
+
+const {
+  name,
+  link,
+  height,
+  width
+} = Astro.props
+
+const icon = getIcon(name);
+---
+<a href={link}>
+  <img src={icon.url} height={height} width={width}>
+</a>

@@ -1,15 +1,16 @@
 ---
 import "../styles/global.css";
 
-import TwitchIcon from '~/assets/icons/twitch.svg';
-import DiscordIcon from '~/assets/icons/discord.svg';
-import TwitterIcon from '~/assets/icons/x.svg';
+import TwitchIcon from '~/assets/icons/twitch-bw.png';
+import DiscordIcon from '~/assets/icons/discord-bw.png';
+import TwitterIcon from '~/assets/icons/x.png';
 import KoomerExcited from '~/assets/koomer-excite.png';
 
 const sidebarLinks = [
   { href: '/kumo-site/', displayText: 'Home'},
   { href: '/kumo-site/about', displayText: 'About' },
   { href: '/kumo-site/socials', displayText: 'Socials' },
+  { href: '/kumo-site/jast', displayText: 'Jast Idols'},
   { href: '/kumo-site/asmr', displayText: 'ASMR' },
   { href: '/kumo-site/dnd/baldurs-gate', displayText: "Baldur's Gate (D&D)" }
 ]
@@ -39,13 +40,13 @@ const currentPath = new URL(Astro.request.url).pathname;
   </head>
   <body class="bg-black text-white">
     <!-- Header -->
-    <div class=" bg-kumo-pink p-2 font-kalam text-3xl border-b-kumo-purple border-b-4 flex">
+    <div class=" bg-kumo-pink p-2 font-kalam text-3xl border-b-kumo-purple border-b-4 flex items-center">
       <div class="w-8">
         <img src={KoomerExcited.src} class="flex-none w-100" />
       </div>
       <h1 class="w-64 flex-1 px-2">kumogorogoro fan site</h1>
       {topNavLinks.map(item => (
-        <a href={item.href} class="flex-none px-1">
+        <a href={item.href} class="flex-none px-2">
           <img src={item.img} height="32" width="32" />
         </a>
       ))}
@@ -59,7 +60,7 @@ const currentPath = new URL(Astro.request.url).pathname;
               { "font-bold": currentPath === item.href },
               `block p-2 
               border-l-4 border-l-transparent
-              hover:border-l-4 hover:border-kumo-pink
+              hover:border-l-4 hover:border-kumo-yellow
               `
             ]}
             href={item.href}>{item.displayText}</a>))}

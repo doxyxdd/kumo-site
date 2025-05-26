@@ -9,3 +9,7 @@
 
   --font-kalam: "Kalam", "sans-serif";
 }
+
+@theme inline {
+  --color-dark-gray: var(--color-gray-900);
+}

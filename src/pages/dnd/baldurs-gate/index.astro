@@ -1,23 +1,28 @@
 ---
-import SidebarLayout from "~/layouts/SidebarLayout.astro";
 import { getCollection } from "astro:content";
+import SidebarLayout from "~/layouts/SidebarLayout.astro";
+import SessionListItem from '~/components/bg/SessionListItem.astro'
+
+import { mapByActs } from '~/bg'
 
 const sessions = await getCollection("baldursGate");
+const sessionActMap = mapByActs(sessions)
+
 ---
 
 <SidebarLayout>
-  <h1 class="text-2xl underline">Sessions</h1>
-  <ol class="p-4">
-    {
-      sessions.map((session) => (
-        <li class="list-decimal p-0.5">
-          <a class="underline decoration-kumo-purple decoration-solid" href={`/kumo-site/dnd/baldurs-gate/sessions/${session.id}`}>
-            {session.data.title}  <span class="text-sm text-gray-500">{session.data.date.toDateString()}</span>
-          </a>
-        </li>
-      ))
-    }
-  </ol>
+  <h1 class="text-4xl font-kalam py-4">Baldur's Gate Sessions</h1>
+  
+  {Object.entries(sessionActMap).map(([act, sessions]) => (
+    <div class="mb-4">
+      <h2 class="text-3xl font-kalam text-kumo-pink p-2">{act}</h2>
+      <div>
+        {sessions.map(session => <SessionListItem session={session}></SessionListItem>)}
+      </div>
+    </div>
+  ))}
 
+  <hr class="mt-12 mx-4">
   <p class="p-4 text-sm">NOTE: I am using baldur's gate as a placeholder for a D&D campaign. I am not very knowledgable about D&D so it is easier for me to placeholder stuff with something I am more familiar with.</p>
+
 </SidebarLayout>
