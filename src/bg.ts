@@ -6,12 +6,6 @@ export type BaldursGateAct = typeof baldursGateActs[number]
 
 export type BaldursGateSession = CollectionEntry<'baldursGate'>
 
-const actIndexes = baldursGateActs.entries().reduce((acc, entry) => {
-  acc[entry[1]] = entry[0]
-  return acc;
-}, {} as Record<BaldursGateAct, number>)
-
-
 
 export function mapByActs(sessions: BaldursGateSession[]): Record<BaldursGateAct, BaldursGateSession[]> {
   return sessions.reduce((map, value) => {
