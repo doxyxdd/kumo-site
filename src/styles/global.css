@@ -2,6 +2,10 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
+@plugin "@iconify/tailwind4" {
+  prefixes: line-md;
+}
+
 @theme {
   --color-kumo-purple: #948392;
   --color-kumo-pink: #f2adbd;
