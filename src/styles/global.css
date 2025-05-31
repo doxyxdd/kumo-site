@@ -2,10 +2,41 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
+@plugin "@iconify/tailwind4" {
+  prefixes: simple-icons, line-md;
+}
+
 @theme {
   --color-kumo-purple: #948392;
   --color-kumo-pink: #f2adbd;
   --color-kumo-yellow: #c4945d;
+
+  --color-kumo-purple-50: #f8f7f8;
+  --color-kumo-purple-100: #f3f0f3;
+  --color-kumo-purple-200: #e7e3e7;
+  --color-kumo-purple-300: #d5ccd5;
+  --color-kumo-purple-400: #baacb9;
+  --color-kumo-purple-500: #a292a1;
+  --color-kumo-purple-600: #948392;
+  --color-kumo-purple-700: #746272;
+  --color-kumo-purple-800: #61535f;
+  --color-kumo-purple-900: #534851;
+  --color-kumo-purple-950: #2f282e;
+
+  --color-reiyu-pink: #f0869e;
+  --color-reiyu-blue: #98c7c7;
+
+  --color-ichigo-pink: #ee58a1;
+  --color-ichigo-yellow: #fffa9b;
+
+  --color-yozo-light: #ebe6ec;
+  --color-yozo-dark: #927d99;
+
+  --color-tane-yellow: #f7d9a5;
+  --color-tane-red: #9f1d21;
+
+  --color-vivi-purple: #d0acd6;
+  --color-vivi-yellow: #ffefb8;
 
   --font-kalam: "Kalam", "sans-serif";
 }
