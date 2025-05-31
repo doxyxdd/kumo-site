@@ -69,7 +69,8 @@ export function baldursGateUrl(slug: string) {
 
 interface JastIdol {
   name: string
-  img: string
+  img: string,
+  styles: string[]
   socials: {
     name: IconType,
     link: string
@@ -80,6 +81,7 @@ export const jast: JastIdol[] = [
   {
     name: 'Kumo Kuddelmuddel',
     img: KumoImg.src,
+    styles: ['from-kumo-purple', 'to-kumo-purple-700', 'bg-linear-to-t'],
     socials: [
       { link: 'https://twitch.tv/kumogorogoro', name: 'twitch' },
       { link: 'https://youtube.com/@kumogorogoro', name: 'youtube' },
@@ -90,6 +92,8 @@ export const jast: JastIdol[] = [
     {
     name: 'Reiyu GuiGui',
     img: ReiyuImg.src,
+    styles: ['from-reiyu-pink', 'to-reiyu-blue', 'bg-linear-to-tr'],
+
     socials: [
       { link: 'https://www.twitch.tv/reiyuguigui', name: 'twitch' },
       { link: 'https://www.youtube.com/c/ReiyuGuigui', name: 'youtube' },
@@ -100,6 +104,8 @@ export const jast: JastIdol[] = [
   {
     name: 'Ichigo Lemonade',
     img: IchigoImg.src,
+    styles: ['from-ichigo-pink', 'to-ichigo-yellow', 'bg-linear-to-tr'],
+
     socials: [
       { link: 'https://www.twitch.tv/ichigolemonade_', name: 'twitch' },
       { link: 'https://www.youtube.com/channel/UChiGxBQ7gHXOYURvc9zod4w', name: 'youtube' },
@@ -110,6 +116,7 @@ export const jast: JastIdol[] = [
   {
     name: 'Yozora Aoi',
     img: YozoImg.src,
+    styles: ['from-yozo-light', 'to-yozo-dark', 'bg-linear-to-tr'],
     socials: [
       { link: 'https://www.twitch.tv/yozora', name: 'twitch' },
       { link: 'https://www.youtube.com/channel/UCTdtNTRxycFnzQtGfPOZYyw', name: 'youtube' },
@@ -119,6 +126,7 @@ export const jast: JastIdol[] = [
   {
     name: 'Tane Tenshi',
     img: TaneImg.src,
+    styles: ['from-tane-yellow', 'to-tane-red', 'bg-linear-to-tr'],
     socials: [
       { link: 'https://www.twitch.tv/tanetenshi', name: 'twitch' },
       { link: 'https://www.youtube.com/@TaneTenshi', name: 'youtube' },
@@ -130,6 +138,7 @@ export const jast: JastIdol[] = [
     {
     name: 'VividlyVIVI',
     img: ViviImg.src,
+    styles: ['from-vivi-purple', 'to-vivi-yellow', 'bg-linear-to-tr'],
     socials: [
       { link: 'https://www.twitch.tv/vividlyvivi', name: 'twitch' },
       { link: 'https://www.youtube.com/c/vividlyASMR', name: 'youtube' },
