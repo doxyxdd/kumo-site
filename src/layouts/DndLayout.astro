@@ -1,8 +1,10 @@
 ---
 import type { CollectionEntry } from "astro:content"
 import { getEntry } from "astro:content"
-import MarkdownLayout from "./MarkdownLayout.astro"
+import Layout from "./Layout.astro"
 import { baldursGateUrl } from "~/util"
+import BaseLayout from "./BaseLayout.astro"
+
 interface Props {
   post: CollectionEntry<'baldursGate'>
 }
@@ -16,20 +18,21 @@ if (post.data.next) {
   nextPost = await getEntry(post.data.next)
 }
 ---
-
-<MarkdownLayout>
-  <div class="w-full flex justify-between items-center">
-    {prevPost && (
-      <a href={baldursGateUrl(prevPost.id)}>
-        <div class="p-2 rounded bg-dark-gray text-sm hover:bg-dark-gray/75">← <span class="underline">Previous Session</span></div>
-      </a>
-    )}
-    <div class="text-sm">Author: {post.data.author} | Date: {post.data.date.toDateString()}</div>
-    {nextPost && (
-      <a href={baldursGateUrl(nextPost.id)}>
-        <div class="p-2 rounded bg-dark-gray text-sm hover:bg-dark-gray/75"><span class="underline">Next Session</span> →</div>
-      </a>
-    )}
-  </div>
-  <slot></slot>
-</MarkdownLayout>
+<BaseLayout title={post.data.title}>
+  <Layout>
+    <div class="w-full flex justify-between items-center">
+      {prevPost && (
+        <a href={baldursGateUrl(prevPost.id)}>
+          <div class="p-2 rounded bg-dark-gray text-sm hover:bg-dark-gray/75">← <span class="underline">Previous Session</span></div>
+        </a>
+      )}
+      <div class="text-sm">Author: {post.data.author} | Date: {post.data.date.toDateString()}</div>
+      {nextPost && (
+        <a href={baldursGateUrl(nextPost.id)}>
+          <div class="p-2 rounded bg-dark-gray text-sm hover:bg-dark-gray/75"><span class="underline">Next Session</span> →</div>
+        </a>
+      )}
+    </div>
+    <slot></slot>
+  </Layout>
+</BaseLayout>
