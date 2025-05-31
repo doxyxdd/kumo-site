@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import SidebarLayout from "~/layouts/SidebarLayout.astro";
+import Layout from "~/layouts/Layout.astro";
 import SessionListItem from '~/components/bg/SessionListItem.astro'
 
 import { mapByActs } from '~/bg'
@@ -10,7 +10,7 @@ const sessionActMap = mapByActs(sessions)
 
 ---
 
-<SidebarLayout>
+<Layout>
   <h1 class="text-4xl font-kalam py-4">Baldur's Gate Sessions</h1>
   
   {Object.entries(sessionActMap).map(([act, sessions]) => (
@@ -25,4 +25,4 @@ const sessionActMap = mapByActs(sessions)
   <hr class="mt-12 mx-4">
   <p class="p-4 text-sm">NOTE: I am using baldur's gate as a placeholder for a D&D campaign. I am not very knowledgable about D&D so it is easier for me to placeholder stuff with something I am more familiar with.</p>
 
-</SidebarLayout>
+</Layout>

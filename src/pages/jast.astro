@@ -1,11 +1,11 @@
 ---
 import Icon from "~/components/Icon.astro"
-import SidebarLayout from "~/layouts/SidebarLayout.astro"
+import Layout from "~/layouts/Layout.astro"
 import { jast } from '~/util'
 
 ---
 
-<SidebarLayout>
+<Layout>
   <h1 class="p-4 text-3xl font-kalam font-bold">Jast Idols</h1>
   <div class="grid grid-cols-3 gap-8 p-4 max-w-256">
     {jast.map(idol => (
@@ -27,4 +27,4 @@ import { jast } from '~/util'
     ))}
     
   </div>
-</SidebarLayout>
+</Layout>

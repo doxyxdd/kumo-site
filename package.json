@@ -17,7 +17,9 @@
   },
   "devDependencies": {
     "@iconify-icons/line-md": "^1.2.30",
+    "@iconify-icons/simple-icons": "^1.2.74",
     "@iconify-json/line-md": "^1.2.8",
+    "@iconify-json/simple-icons": "^1.2.36",
     "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/typography": "^0.5.16",
     "husky": "^9.1.7",

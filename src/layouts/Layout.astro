@@ -1,0 +1,135 @@
+---
+import "~/styles/global.css";
+import { Image } from "astro:assets";
+
+import KoomerExcited from "~/assets/koomer-excite.png";
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title?: string;
+}
+
+const sidebarLinks = [
+  { href: "/kumo-site/", displayText: "HOME" },
+  { href: "/kumo-site/about", displayText: "ABOUT" },
+  { href: "/kumo-site/socials", displayText: "SOCIALS" },
+  { href: "/kumo-site/jast", displayText: "JAST" },
+  { href: "/kumo-site/asmr", displayText: "ASMR" },
+  { href: "/kumo-site/dnd/baldurs-gate", displayText: "BALDUR'S GATE" },
+];
+
+const { title } = Astro.props;
+
+const currentPath = new URL(Astro.request.url).pathname;
+const navs = [
+  'from-zinc-800',
+  'to-zinc-950',
+]
+---
+
+<BaseLayout title={title}>
+  <div class="flex h-full flex-col">
+    <!-- Top Nav -->
+    <div
+      class:list={[
+        navs,
+        "flex items-center bg-linear-to-r from-40% text-5xl border-b-2 border-kumo-pink"
+      ]}>
+      <button
+        id="toggleMenuButton"
+        class="iconify line-md--menu m-2 block size-12 md:hidden"></button>
+
+      <div class="block flex-1 md:hidden"></div>
+
+      <Image
+        class="mx-2 hidden size-12 md:block"
+        src={KoomerExcited}
+        alt="Excited Koomer"
+      />
+
+      <div class="hidden md:block">
+        <h1 class="font-kalam">kumogorogoro</h1>
+      </div>
+
+      <div class="flex-1"></div>
+
+      <div class="p-1 mr-2">
+        <a
+          title="Kumo streams ~"
+          href="https://twitch.tv/kumogorogoro"
+        >
+          <span class="iconify simple-icons--twitch aspect-square"
+          ></span>
+        </a>
+
+        <a
+          title="Follow kumo on twitter"
+          href="https://x.com/kumogorogoro"
+          ><span class="iconify simple-icons--x aspect-square"></span></a
+        >
+        <a
+          title="Check out Kumo's Youtube Channel"
+          href="https://youtube.com/@kumogorogoro"
+        >
+          <span class="iconify simple-icons--youtube aspect-square"
+          ></span>
+        </a>
+        <a
+          title="Come hang out in our discord"
+          href="https://discord.gg/kumtown"
+        >
+          <span class="iconify simple-icons--discord aspect-square"
+          ></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="flex flex-1 flex-col bg-green-300 md:flex-row">
+      <!-- Sidenav -->
+      <nav
+        id="sidenav"
+        data-show="false"
+        class:list={[
+          navs,
+          "h-fit max-h-0 p-2 w-full bg-linear-to-b px-2 text-center text-2xl md:border-r-2 md:border-kumo-pink font-kalam transition-all duration-500 ease-in-out md:block md:h-full md:max-h-full md:w-50 md:text-left"
+        ]}>
+        {
+          sidebarLinks.map((item) => (
+            <a
+              class:list={[
+                { "font-bold": currentPath === item.href },
+                `hover:border-kumo-yellow block border-l-4 border-l-transparent p-2 hover:border-l-4`,
+              ]}
+              href={item.href}
+            >
+              {item.displayText}
+            </a>
+          ))
+        }
+      </nav>
+      <!-- Main -->
+      <main class="h-full w-full overflow-auto bg-black p-2 md:p-4">
+        <slot />
+      </main>
+    </div>
+  </div>
+
+  <script>
+    let menuToggleBtn = document.getElementById("toggleMenuButton");
+    let sidenav = document.getElementById("sidenav");
+
+    menuToggleBtn?.addEventListener("click", () => {
+      if (!sidenav) {
+        alert("Could not find the sidenav!");
+        return;
+      }
+      if (sidenav.classList.contains("max-h-0")) {
+        sidenav.classList.remove("max-h-0");
+        sidenav.classList.add("max-h-1/2");
+      } else {
+        sidenav.classList.remove("max-h-1/2");
+        sidenav.classList.add("max-h-0");
+      }
+    });
+  </script>
+</BaseLayout>
