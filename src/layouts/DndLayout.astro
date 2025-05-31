@@ -23,13 +23,16 @@ if (post.data.next) {
     <div class="w-full flex justify-between items-center">
       {prevPost && (
         <a href={baldursGateUrl(prevPost.id)}>
-          <div class="p-2 rounded bg-dark-gray text-sm hover:bg-dark-gray/75">← <span class="underline">Previous Session</span></div>
+          <div class="p-2 rounded bg-dark-gray text-sm hover:bg-dark-gray/75">← <span class="underline">Previous</span></div>
         </a>
       )}
-      <div class="text-sm">Author: {post.data.author} | Date: {post.data.date.toDateString()}</div>
+      <div class="text-center">
+        <div class="text-sm">{post.data.author}</div>
+        <div class="text-sm text-slate-400 italic">{post.data.date.toDateString()}</div>
+      </div>
       {nextPost && (
         <a href={baldursGateUrl(nextPost.id)}>
-          <div class="p-2 rounded bg-dark-gray text-sm hover:bg-dark-gray/75"><span class="underline">Next Session</span> →</div>
+          <div class="p-2 rounded bg-dark-gray text-sm hover:bg-dark-gray/75"><span class="underline">Next</span> →</div>
         </a>
       )}
     </div>
