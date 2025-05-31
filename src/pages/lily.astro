@@ -1,0 +1,162 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import lilyWoozy from "~/assets/lily-woozy.png";
+import lilyPls from "~/assets/lily-pls.gif";
+import { Image } from "astro:assets";
+
+const startSongText = "TRY CLICKING ME!";
+const stopSongText = "LET'S FREAKING GO!!!";
+---
+
+<Layout>
+  <div class="min-h-full rounded-4xl bg-green-100 p-4 text-black">
+    <div class="flex flex-col md:flex-row justify-between">
+      <div class="p-2 text-xl">
+        <h1 class="font-kalam py-4 text-5xl font-bold underline">Lily Hopkins</h1>
+        <p>This is a placeholder until Lily thinks of an amazing quote!!! Tempor adipisicing reprehenderit nostrud magna. Quis laboris irure officia magna pariatur ullamco fugiat cupidatat aute sit. Anim incididunt occaecat incididunt esse veniam commodo do duis sit.</p>
+        <span class="block text-right italics font-kalam mr-8 p-2">- Miss Lily Hopkins</span>
+      </div>
+      <button
+        id="jam"
+        class="font-kalam m-4 flex items-center gap-2 rounded-3xl bg-green-400 p-4 text-3xl drop-shadow-xl drop-shadow-green-800 shrink-0"
+      >
+        <Image
+          id="dance"
+          src={lilyPls}
+          alt="lily dance"
+          class="hidden aspect-square size-16 animate-bounce"
+        />
+        <Image
+          id="woozy"
+          src={lilyWoozy}
+          alt="lily woozy"
+          class="block aspect-square size-16"
+        />
+        <span
+          id="jamText"
+          class="mt-2 animate-pulse"
+          data-paused={startSongText}
+          data-playing={stopSongText}>{startSongText}</span
+        >
+      </button>
+    </div>
+
+    <div class="mt-4">
+      <h3 class="font-kalam p-4 text-3xl">Clips of kgg and lily</h3>
+      <div class="grid grid-cols-1 gap-2 md:grid-cols-4 md:gap-6">
+        <iframe
+          class="aspect-shorts size-full"
+          src="https://www.youtube-nocookie.com/embed/idYJ70wMZ18"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        <iframe
+          class="aspect-shorts size-full"
+          src="https://www.youtube-nocookie.com/embed/Ei48tdZzfAQ"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        <iframe
+          class="aspect-shorts size-full"
+          src="https://www.youtube-nocookie.com/embed/SdpvfV2lBR4"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        <iframe
+          class="aspect-shorts size-full"
+          src="https://www.youtube-nocookie.com/embed/xwKzCH1XwVc"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+    <!-- Soundcloud -->
+    <div
+      id="soundcloud-wrapper"
+      class="fixed right-1 bottom-0 left-1 hidden md:right-1/10 md:left-1/10"
+    >
+      <button
+        id="close"
+        class="absolute top-0 right-0 size-12 rounded-3xl bg-white"
+        ><span class="iconify line-md--close-circle size-full bg-green-500"
+        ></span></button
+      >
+      <div
+        style="font-size: 12px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"
+      >
+        <iframe
+          class="mt-8"
+          id="soundcloud"
+          width="100%"
+          height="166"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1187015824&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"
+        ></iframe>
+      </div>
+
+      <script is:inline src="https://w.soundcloud.com/player/api.js"></script>
+
+      <script>
+        let iframe = document.getElementById("soundcloud");
+        let soundcloudWrapper = document.getElementById("soundcloud-wrapper");
+        let song = SC.Widget(iframe);
+        let button = document.getElementById("jam");
+        let closeButton = document.getElementById("close");
+        let woozy = document.getElementById("woozy");
+        let dance = document.getElementById("dance");
+        let playBtnText = document.getElementById("jamText");
+
+        function stopSong() {
+          if (!soundcloudWrapper || !woozy || !playBtnText || !dance) {
+            return;
+          }
+          song.pause();
+          song.seekTo(0);
+          soundcloudWrapper.classList.add("hidden");
+          soundcloudWrapper.classList.remove("block");
+          woozy.classList.add("block");
+          woozy.classList.remove("hidden");
+          dance.classList.add("hidden");
+          dance.classList.remove("block");
+          button?.classList.add("bg-green-400");
+          button?.classList.remove("animate-bg-rainbow");
+          playBtnText.innerText = playBtnText.dataset.paused || "";
+        }
+
+        function startSong() {
+          if (!soundcloudWrapper || !woozy || !playBtnText || !dance) {
+            return;
+          }
+          soundcloudWrapper.classList.add("block");
+          soundcloudWrapper.classList.remove("hidden");
+          song.play();
+          woozy.classList.remove("block");
+          woozy.classList.add("hidden");
+          dance.classList.add("block");
+          dance.classList.remove("hidden");
+          button?.classList.remove("bg-green-900");
+          button?.classList.add("animate-bg-rainbow");
+          playBtnText.innerText = playBtnText.dataset.playing || "";
+        }
+
+        closeButton?.addEventListener("click", () => {
+          stopSong();
+        });
+
+        button?.addEventListener("click", () => {
+          if (soundcloudWrapper?.classList.contains("hidden")) {
+            startSong();
+          } else {
+            stopSong();
+          }
+        });
+      </script>
+    </div>
+  </div>
+</Layout>
