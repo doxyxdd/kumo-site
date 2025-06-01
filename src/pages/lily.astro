@@ -9,16 +9,16 @@ const stopSongText = "LET'S FREAKING GO!!!";
 ---
 
 <Layout>
-  <div class="min-h-full rounded-4xl bg-green-100 p-4 text-black">
-    <div class="flex flex-col md:flex-row justify-between">
+  <div class="min-h-full rounded-4xl bg-green-50 p-4 text-black">
+    <div class="flex flex-col lg:flex-row justify-between items-center">
       <div class="p-2 text-xl">
-        <h1 class="font-kalam py-4 text-5xl font-bold underline">Lily Hopkins</h1>
+        <h1 class="font-kalam py-4 text-5xl font-bold underline decoration-green-300 text-shadow-lg">Lily Hopkins</h1>
         <p>This is a placeholder until Lily thinks of an amazing quote!!! Tempor adipisicing reprehenderit nostrud magna. Quis laboris irure officia magna pariatur ullamco fugiat cupidatat aute sit. Anim incididunt occaecat incididunt esse veniam commodo do duis sit.</p>
         <span class="block text-right italics font-kalam mr-8 p-2">- Miss Lily Hopkins</span>
       </div>
       <button
         id="jam"
-        class="font-kalam m-4 flex items-center gap-2 rounded-3xl bg-green-400 p-4 text-3xl drop-shadow-xl drop-shadow-green-800 shrink-0"
+        class="font-kalam m-4 flex items-center gap-2 rounded-3xl bg-green-300 p-4 text-3xl drop-shadow-xl drop-shadow-green-800 shrink-0"
       >
         <Image
           id="dance"
@@ -34,15 +34,15 @@ const stopSongText = "LET'S FREAKING GO!!!";
         />
         <span
           id="jamText"
-          class="mt-2 animate-pulse"
+          class="mt-2 animate-pulse text-shadow-md"
           data-paused={startSongText}
           data-playing={stopSongText}>{startSongText}</span
         >
       </button>
     </div>
 
-    <div class="mt-4">
-      <h3 class="font-kalam p-4 text-3xl">Clips of kgg and lily</h3>
+    <div class="mt-4 p-2">
+      <h3 class="font-kalam p-2 text-3xl underline decoration-green-300">Clips of kgg and lily</h3>
       <div class="grid grid-cols-1 gap-2 md:grid-cols-4 md:gap-6">
         <iframe
           class="aspect-shorts size-full"

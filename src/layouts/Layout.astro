@@ -22,6 +22,7 @@ const sidebarLinks = [
 const { title } = Astro.props;
 
 const currentPath = new URL(Astro.request.url).pathname;
+console.log({ currentPath })
 const navs = [
   'from-zinc-800',
   'to-zinc-950',
@@ -92,14 +93,17 @@ const navs = [
         data-show="false"
         class:list={[
           navs,
-          "h-fit max-h-0 p-2 w-full bg-linear-to-b px-2 text-center text-2xl md:border-r-2 md:border-kumo-pink font-kalam transition-all duration-500 ease-in-out md:block md:h-full md:max-h-full md:w-50 md:text-left"
+          "h-fit max-h-0 w-full bg-linear-to-b px-1 text-center text-2xl md:border-r-2 md:border-kumo-pink font-kalam transition-all duration-500 ease-in-out md:block md:h-full md:max-h-full md:w-50 md:text-left"
         ]}>
         {
           sidebarLinks.map((item) => (
             <a
               class:list={[
-                { "font-bold": currentPath === item.href },
-                `hover:border-kumo-yellow block border-l-4 border-l-transparent p-2 hover:border-l-4`,
+                { 
+                  "font-bold": currentPath === item.href,
+                  "bg-zinc-700": currentPath === item.href
+                },
+                `rounded-xl hover:border-kumo-yellow block border-l-4 border-l-transparent p-2 hover:border-l-4`,
               ]}
               href={item.href}
             >
