@@ -64,7 +64,7 @@ export function getIcon(name: IconType) {
 }
 
 export function baldursGateUrl(slug: string) {
-  return `/kumo-site/dnd/baldurs-gate/sessions/${slug}`
+  return `/kumo-site/dnd/baldurs-gate/sessions/${slug}/`
 }
 
 interface JastIdol {

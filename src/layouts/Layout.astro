@@ -11,18 +11,17 @@ interface Props {
 
 const sidebarLinks = [
   { href: "/kumo-site/", displayText: "HOME" },
-  { href: "/kumo-site/about", displayText: "ABOUT" },
-  { href: "/kumo-site/socials", displayText: "SOCIALS" },
-  { href: "/kumo-site/jast", displayText: "JAST" },
-  { href: "/kumo-site/asmr", displayText: "ASMR" },
-  { href: "/kumo-site/dnd/baldurs-gate", displayText: "BALDUR'S GATE" },
-  { href: "/kumo-site/lily", displayText: "LILY HOPS"},
+  { href: "/kumo-site/about/", displayText: "ABOUT" },
+  { href: "/kumo-site/socials/", displayText: "SOCIALS" },
+  { href: "/kumo-site/jast/", displayText: "JAST" },
+  { href: "/kumo-site/asmr/", displayText: "ASMR" },
+  { href: "/kumo-site/dnd/baldurs-gate/", displayText: "BALDUR'S GATE" },
+  { href: "/kumo-site/lily/", displayText: "LILY HOPS"},
 ];
 
 const { title } = Astro.props;
 
-const currentPath = new URL(Astro.request.url).pathname;
-console.log({ currentPath })
+const currentPath = Astro.url.pathname
 const navs = [
   'from-zinc-800',
   'to-zinc-950',
@@ -103,7 +102,7 @@ const navs = [
                   "font-bold": currentPath === item.href,
                   "bg-zinc-700": currentPath === item.href
                 },
-                `rounded-xl hover:border-kumo-yellow block border-l-4 border-l-transparent p-2 hover:border-l-4`,
+                `hover:border-kumo-yellow block border-l-4 border-l-transparent p-2 hover:border-l-4`,
               ]}
               href={item.href}
             >

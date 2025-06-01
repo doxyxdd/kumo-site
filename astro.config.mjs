@@ -8,6 +8,7 @@ import icon from 'astro-icon'
 export default defineConfig({
   site: 'https://doxyxdd.github.io',
   base: 'kumo-site',
+  trailingSlash: 'always',
   vite: {
     plugins: [icon(), tailwindcss()],
   },
