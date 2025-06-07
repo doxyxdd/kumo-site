@@ -35,7 +35,7 @@ const navs = [
     <div
       class:list={[
         navs,
-        "flex items-center bg-linear-to-r from-40% text-5xl border-b-2 border-kumo-pink"
+        "flex items-center bg-linear-to-r from-40% text-4xl border-b-2 border-kumo-pink"
       ]}>
       <button
         id="toggleMenuButton"
@@ -93,7 +93,7 @@ const navs = [
         data-show="false"
         class:list={[
           navs,
-          "h-fit max-h-0 w-full bg-linear-to-b px-1 text-center text-2xl md:border-r-2 md:border-kumo-pink font-kalam transition-all duration-500 ease-in-out md:block md:h-full md:max-h-full md:w-50 md:text-left"
+          "h-fit max-h-0 w-full bg-linear-to-b px-1 text-center text-xl md:border-r-2 md:border-kumo-pink font-kalam transition-all duration-500 ease-in-out md:block md:h-full md:max-h-full md:w-50 md:text-left"
         ]}>
         {
           sidebarLinks.map((item) => (
@@ -133,9 +133,9 @@ const navs = [
       }
       if (sidenav.classList.contains("max-h-0")) {
         sidenav.classList.remove("max-h-0");
-        sidenav.classList.add("max-h-1/2");
+        sidenav.classList.add("max-h-1/3");
       } else {
-        sidenav.classList.remove("max-h-1/2");
+        sidenav.classList.remove("max-h-1/3");
         sidenav.classList.add("max-h-0");
       }
     });
