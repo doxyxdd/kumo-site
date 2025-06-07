@@ -7,6 +7,7 @@ import BaseLayout from "./BaseLayout.astro";
 
 interface Props {
   title?: string;
+  styles?: string;
 }
 
 const sidebarLinks = [
@@ -19,7 +20,7 @@ const sidebarLinks = [
   { href: "/kumo-site/lily/", displayText: "LILY HOPS"},
 ];
 
-const { title } = Astro.props;
+const { title, styles = "bg-black p-2 md:p-4" } = Astro.props;
 
 const currentPath = Astro.url.pathname
 const navs = [
@@ -85,7 +86,7 @@ const navs = [
       </div>
     </div>
 
-    <div class="flex flex-1 flex-col bg-green-300 md:flex-row">
+    <div class="flex flex-1 flex-col md:flex-row">
       <!-- Sidenav -->
       <nav
         id="sidenav"
@@ -112,7 +113,10 @@ const navs = [
         }
       </nav>
       <!-- Main -->
-      <main class="h-full w-full overflow-auto bg-black p-2 md:p-4">
+      <main class:list={[
+        styles,
+        "h-full w-full overflow-auto"
+      ]}>
         <slot />
       </main>
     </div>

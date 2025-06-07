@@ -9,6 +9,9 @@ export default defineConfig({
   site: 'https://doxyxdd.github.io',
   base: 'kumo-site',
   trailingSlash: 'always',
+  image: {
+    domains: ['pbs.twimg.com']
+  },
   vite: {
     plugins: [icon(), tailwindcss()],
   },
