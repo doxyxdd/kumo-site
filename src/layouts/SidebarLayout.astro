@@ -7,13 +7,13 @@ import TwitterIcon from '~/assets/icons/x.png';
 import KoomerExcited from '~/assets/koomer-excite.png';
 
 const sidebarLinks = [
-  { href: '/kumo-site/', displayText: 'Home'},
-  { href: '/kumo-site/about', displayText: 'About' },
-  { href: '/kumo-site/socials', displayText: 'Socials' },
-  { href: '/kumo-site/jast', displayText: 'Jast Idols'},
-  { href: '/kumo-site/lily', displayText: 'lily' },
-  { href: '/kumo-site/asmr', displayText: 'ASMR' },
-  { href: '/kumo-site/dnd/baldurs-gate', displayText: "Baldur's Gate (D&D)" }
+  { href: '/', displayText: 'Home'},
+  { href: '/about', displayText: 'About' },
+  { href: '/socials', displayText: 'Socials' },
+  { href: '/jast', displayText: 'Jast Idols'},
+  { href: '/lily', displayText: 'lily' },
+  { href: '/asmr', displayText: 'ASMR' },
+  { href: '/dnd/baldurs-gate', displayText: "Baldur's Gate (D&D)" }
 ]
 
 const topNavLinks = [
@@ -33,10 +33,10 @@ const currentPath = new URL(Astro.request.url).pathname;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://doxyxdd.github.io/kumo-site/">
+    <meta property="og:url" content="https://doxyxdd.github.io/">
     <meta property="og:title" content="Random Koomer's Fan Page">
     <meta property="og:description" content="Fan made page for vtuber kumogorogoro. Made for fun and educational purposes!">
-    <meta property="og:image" content="https://doxyxdd.github.io/kumo-site/kumo-nerd.png">
+    <meta property="og:image" content="https://doxyxdd.github.io/kumo-nerd.png">
     <title>Kumogorogoro Fan Site</title>
   </head>
   <body class="bg-black text-white">
