@@ -1,0 +1,9 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import VideoPlayer from '~/components/VideoPlayer.svelte'
+import { ARCHIVE_CDN } from 'astro:env/client'
+---
+
+<Layout>
+  <VideoPlayer client:only="svelte" videoPath={ARCHIVE_CDN} videoType="vods" videoId="2483753862"></VideoPlayer>
+</Layout>
