@@ -10,10 +10,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@astrojs/svelte": "^7.1.0",
     "@tailwindcss/vite": "^4.1.7",
     "astro": "^5.7.13",
     "astro-icon": "^1.1.5",
-    "tailwindcss": "^4.1.7"
+    "svelte": "^5.34.7",
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@iconify-icons/line-md": "^1.2.30",
