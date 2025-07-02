@@ -14,6 +14,7 @@
 </script>
 
 <div class="p-2">
+  <h1 class="p-4 text-3xl uppercase">{videoType}</h1>
   {#await request}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
       {#each [0, 1, 2, 3, 4, 5] as {}}

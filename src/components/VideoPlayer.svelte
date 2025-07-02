@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { coerceToVideoType, type VideoType } from "~/utils/archive";
+    import { coerceToVideoType } from "~/utils/archive";
 
     function buildVideoUrl(videoPath: string, videoType: string, videoId: string) {
         return `${videoPath}/${videoType}/${videoId}.mp4`;

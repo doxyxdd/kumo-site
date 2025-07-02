@@ -2,8 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { ARCHIVE_CDN } from "astro:env/client";
 import Layout from "~/layouts/Layout.astro";
-import VideoGrid from "~/components/VideoGrid.svelte";
-
+import VideoTypePage from '~/components/VideoTypePage.svelte'
 export const getStaticPaths = (() => {
   return [
     { params: { type: "vods" } },
@@ -17,6 +16,5 @@ const { type } = Astro.params;
 ---
 
 <Layout>
-  <h1 class="p-4 text-3xl uppercase">{type}</h1>
-  <VideoGrid client:only="svelte" videoType={type} videoPath={ARCHIVE_CDN} />
+  <VideoTypePage client:only="svelte" videoType={type} videoPath={ARCHIVE_CDN} />
 </Layout>
